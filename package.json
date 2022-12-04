@@ -1,0 +1,36 @@
+{
+  "name": "backend-server",
+  "version": "0.0.1",
+  "private": true,
+  "engines": {
+    "node": "11.0.0",
+    "npm": "6.x"
+  },
+  "scripts": {
+    "heroku-prebuild": "npm install",
+    "dev": "node -r dotenv/config ./node_modules/.bin/nodemon --exec babel-node ./src/bin/www",
+    "start": "node ./node_modules/.bin/nodemon --exec babel-node ./src/bin/www",
+    "heroku-postbuild": "cd webclient && npm install && npm run build"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^6.3.1",
+    "bcrypt": "^3.0.3",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "express-validator": "^5.3.1",
+    "helmet": "^3.15.0",
+    "http-errors": "^1.6.3",
+    "jsonwebtoken": "^8.4.0",
+    "mongoose": "^5.4.9",
+    "nodemon": "^1.18.9"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/preset-env": "^7.3.1"
+  }
+}
